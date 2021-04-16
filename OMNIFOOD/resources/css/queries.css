@@ -1,0 +1,183 @@
+/*------------------------------------------------------------------------*/
+/*DE LA TABLETE MARI PANA LA LATIMEA DE 1200PX
+/*-----------------------------------------------------------------------*/
+
+@media only screen and (max-width: 1200px) {
+  .hero-text-box {
+    width: 100%;
+    padding: 0 2%;
+  }
+
+  .row {
+    padding: 0 4%;
+  }
+}
+
+/*------------------------------------------------------------------------*/
+/*PENTRU IPDAD MODUL PEISAJ (LANDSCAPE)
+/*-----------------------------------------------------------------------*/
+
+@media only screen and (max-width: 1023px) {
+  body {
+    font-size: 18px;
+  }
+
+  section {
+    padding: 60px 0px;
+  }
+
+  .long-text {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%; /*pt a centra punem margine stanga dreapta de 10% deaorece latimea totala este de 100% din care width:80% mai ramane 20% deci 10% dreapta 10% stanga si textul este centrat*/
+  }
+
+  .steps-box {
+    margin-top: 10px;
+  }
+  .steps-box:last-child {
+    margin-top: 10px;
+  }
+  .works-step {
+    margin-bottom: 40px;
+  }
+  .works-step:last-of-type {
+    margin-bottom: 60px;
+  }
+
+  .app-screen {
+    width: 50%;
+  }
+
+  .icon-small {
+    width: 16px;
+    margin-right: 5px;
+  }
+  .city-feature {
+    font-size: 90%;
+  }
+
+  .plan-box {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .plan-price {
+    font-size: 250%;
+  }
+
+  .contact-form {
+    width: 80%;
+  }
+}
+
+/*-------------------------------------------------------------------------------------*/
+/*PENTRU TELEFOANE MICI SI TABLETE MICI DE LA 481 PANA LA 767PX (IPAD MODUL PORTRET)*/
+/*------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 18px;
+  }
+
+  section {
+    padding: 30px 0;
+  }
+
+  .row,
+  .hero-text-box {
+    padding: 0 4%;
+  }
+
+  h1 {
+    font-size: 180%;
+  }
+
+  h2 {
+    font-size: 150%;
+  }
+
+  .long-text {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+
+  .main-nav {
+    display: none;
+  }
+  .app-screen {
+    width: 25%;
+    margin-right: 35%;
+    margin-bottom: 30px;
+  }
+
+  .works-step {
+    margin-bottom: 20px;
+  }
+
+  .works-step:last-of-type {
+    /*toate elementele din works-step sa aiba marginea de jos de 20px cu exceptia ultimului element care sa aiba de 50px*/
+    margin-bottom: 50px;
+  }
+
+  .works-step div {
+    width: 25px;
+    height: 25px;
+    font-size: 90%; /*asta inseamna 30px 150x20px(initiali)/100*/
+    padding: 3px;
+    margin-bottom: 5px;
+  }
+
+  .btn-app img {
+    height: 40px;
+    width: auto;
+  }
+}
+.btn-app:first-of-type {
+  margin-left: 25%;
+}
+/*----------------------------------------------------------------*/
+/*PENTRU DISPOZITIVE(TELEFOANELE) MICI DE LA 0 PANA LA 480PX*/
+/*---------------------------------------------------------------*/
+
+@media only screen and (max-width: 484px) {
+  body {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 100%;
+  }
+  .app-screen {
+    width: 25%;
+    margin-right: 35%;
+    margin-bottom: 10px;
+    margin-top: -30px;
+  }
+
+  .btn-app img {
+    height: 30px;
+  }
+  .btn-app:first-of-type {
+    margin-left: 18%;
+  }
+
+  h2:after {
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    margin: 10px auto;
+  }
+
+  .big-icon {
+    font-size: 150%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 90%;
+    margin-bottom: 10px;
+  }
+}

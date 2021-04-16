@@ -1,0 +1,613 @@
+/* orage color: #e67e22*/
+
+/*-----------------------------------------*/
+/*BASIC SETUP (setarea de baza)*/
+/*-----------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #fff;
+  color: #555;
+  font-family: "Lato", "Arial", sans-serif; /*Arial este a doua obtiune, in cazul in care Lato nu poate fi afisat Arial va fi in locul lui. Daca nici Arial nu este disponibil. A treia obtiune sans-serif inseamna ca in cazul in care nu sunt dispobile niciunu dintre cele doua se va afisa cu orice font de tip sans serif */
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility; /*redarea textului - ceea ce va face ca fonturile sa fie redate intr-un mod perfect*/
+  overflow-x: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  /*aceasta clasa va sterge float dupa un element*/
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+/*REUSABLE COMPONENTS (componente reutilizabile-aceste componente sunt reutilizabile adica le vom utiliza pe tot site-ul)*/
+/*-----------------------------------------------------------------------------------------*/
+
+.row {
+  max-width: 1140px; /*doar aici vom folosi px*/
+  margin: 0 auto; /*top right bottom left sau putem pune margin: 0 auto (inseamna 0 - sus jos, auto stanga dreapta)*/
+}
+
+section {
+  padding: 80px 0;
+}
+
+.box {
+  padding: 1%;
+}
+
+/*--------HEADINGS---------*/
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 240%; /*adica 40px (200% din 20 (font-size de baza declarat in html))*/
+  word-spacing: 5px;
+  letter-spacing: 1px;
+}
+h2 {
+  color: #555555;
+  font-size: 180%;
+  text-align: center;
+  word-spacing: 2px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+h2:after {
+  display: block;
+  height: 3px;
+  width: 100px;
+  background-color: #e67e22;
+  content: " ";
+  margin: 20px auto;
+}
+
+h3 {
+  font-size: 110%;
+  margin-bottom: 20px;
+}
+
+/*--------BUTTONS---------*/
+
+.btn:link,
+.btn:visited,
+input[type="submit"] {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 280px;
+  -webkit-transition: background-color 0.2s, border 0.2s, color 0.2;
+  transition: background-color 0.2s, border 0.2s, color 0.2; /*se va schimba culoarea doar pt 2 secunde*/
+}
+
+.btn-full:link, /*link -starea normala a elemntului visited- daca a fost vizitat*/
+.btn-full:visited,
+input[type="submit"] {
+  background-color: #e67e22;
+  border: 2px solid #e67e22;
+  color: #fff;
+  margin-right: 20px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+  border: 2px solid #e67e22;
+  color: #e67e22;
+}
+
+.btn:hover,
+.btn:active,
+input[type="submit"]:hover,
+input[type="submit"]:active {
+  background-color: #de7519;
+}
+
+.btn-full:hover,
+.btn-full:active,
+input[type="submit"]:hover,
+input[type="submit"]:active {
+  border: 2px solid #de7519;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+  border: 2px solid #de7519;
+  color: white;
+}
+
+/*-----------------------------------------*/
+/*PARAGRAPHS*/
+/*-----------------------------------------*/
+
+.long-text {
+  line-height: 145%;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%; /*pt a centra punem margine stanga dreapta de 15% deaorece latimea totala este de 100% din care width:70% mai ramane 30% deci 15% dreapta 15% stanga si textul este centrat*/
+}
+
+.box p {
+  font-size: 90%;
+  line-height: 145%; /*distanta dintre randuri*/
+}
+
+/*-----------------------------------------*/
+/*ICONS*/
+/*-----------------------------------------*/
+
+.big-icon {
+  font-size: 350%;
+  display: block; /*forteaza o rupere de linie*/
+  color: #e67e22;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.icon-small {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  color: #e67e22;
+  margin-right: 10px;
+  line-height: 120%;
+  vertical-align: middle;
+  margin-top: -5px;
+}
+
+/*-----------------------------------------*/
+/*LINKS*/
+/*-----------------------------------------*/
+
+a:link,
+a:visited {
+  color: #e67e22;
+  text-decoration: none;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #e67e22;
+  -webkit-transition: border-bottom 0.2s, color 0.2s;
+  transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active {
+  color: #555;
+  border-bottom: 1px solid transparent;
+}
+/*-----------------------------------------*/
+/*HEADER*/
+/*-----------------------------------------*/
+
+header {
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.7)),
+      to(rgba(0, 0, 0, 0.7))
+    ),
+    url(background-images/hero.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(background-images/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh; /*este 100% din fereastra de vizualizare*/
+}
+
+.hero-text-box {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(
+    -50%,
+    -50%
+  ); /*repozitionam elementul la jumatete de inaltime, latime, stanga, dreapta*/
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-top: 20px;
+}
+
+.main-nav {
+  float: right;
+  list-style-type: none;
+  margin-top: 55px;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-left: 40px;
+}
+.main-nav li a:link,
+.main-nav li a:visited {
+  padding: 8px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 90%; /*niciodata nu punem dimesiunea fontului in px doar cel de baza la restul impartim: marimea dorita la cel de baza ex: 18px:20px= 0,9 adica 90%*/
+  border-bottom: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: border-bottom 0.5s;
+  transition: border-bottom 0.5s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+  border-bottom: 3px solid #e67e22;
+}
+
+/*-----------------------------------------*/
+/*FEATURES SECTION*/
+/*-----------------------------------------*/
+
+.section-features .long-text {
+  margin-bottom: 20px;
+}
+
+/*-----------------------------------------*/
+/*SECTION IMAGE-MEALS*/
+/*-----------------------------------------*/
+
+.section-meals {
+  padding: 0;
+}
+
+.meals-showcase {
+  width: 100%;
+  list-style: none;
+}
+
+.meals-showcase li {
+  display: block;
+  float: left;
+  width: 25%; /* trebuie sa incapa 4 imagini pe un rand deci 100% latimea coontainerului:4 =25%*/
+}
+
+.meals-photo {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+.meals-photo img {
+  opacity: 0.7; /* daca punem transparenta de 70% pozele vor fi cam albe asadar punem in spatele acestei imagini un container negru deci setam background-color la meals-image: black*/
+  width: 100%;
+  height: auto;
+  -webkit-transform: scale(1.15);
+  transform: scale(
+    1.15
+  ); /*am marit imaginea cu 1,15 ceea ce inseamna ca va fi de 115%. Acum imaginea este mai mare decat containerul in care se afla (meals-image care este de 100%*/
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+}
+
+.meals-photo img:hover {
+  -webkit-transform: scale(1.03);
+  transform: scale(
+    1.03
+  ); /*vrem ca imaginea sa revina la dimensiunea normala adica la 100%, dar vom pune la 103 pentru a disparea linea alba dintre imagini*/
+  opacity: 1;
+}
+
+/*-----------------------------------------*/
+/*SECTION STEPS*/
+/*-----------------------------------------*/
+
+.section-steps {
+  background-color: #f4f4f4;
+}
+.steps-box:first-child {
+  /*va select primul element din aceasta clasa in cazul nostru elementul din stanga*/
+  text-align: right;
+  padding-right: 3%;
+  margin-top: 30px;
+}
+
+.steps-box:last-child {
+  padding-left: 3%;
+  margin-top: 70px;
+}
+
+.app-screen {
+  width: 40%;
+}
+
+.works-step {
+  margin-bottom: 50px;
+}
+
+.works-step:last-of-type {
+  /*toate elementele din works-step sa aiba marginea de jos de 50px cu exceptia ultimului element care sa aiba de 80px*/
+  margin-bottom: 80px;
+}
+
+.works-step div {
+  color: #e67e22;
+  border: 2px solid #e67e22;
+  display: block; /* elementul nu forteaza o rupere de linie*/
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  font-size: 150%; /*asta inseamna 30px 150x20px(initiali)/100*/
+  padding: 5px;
+  float: left;
+  margin-right: 20px;
+}
+
+.btn-app:link,
+.btn-app:visited {
+  border: 0;
+}
+.btn-app img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+/*-----------------------------------------*/
+/*SECTION CITIES*/
+/*-----------------------------------------*/
+
+.box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.city-feature {
+  margin-bottom: 5px;
+  font-size: 100%;
+}
+
+/*-----------------------------------------*/
+/*SECTION CUSTOMERS*/
+/*-----------------------------------------*/
+
+.section-customers {
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
+    url(background-images/back-customers.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(background-images/back-customers.jpg);
+  background-size: cover;
+  color: #fff;
+  background-attachment: fixed; /*imaginea ramane mereu in acelasi loc chiar daca derulam pagina*/
+}
+
+.section-customers h2 {
+  color: #fff;
+}
+
+blockquote {
+  padding: 2%;
+  font-style: italic;
+  line-height: 145%;
+  position: relative;
+  margin-top: 40px;
+}
+
+blockquote:before {
+  content: "\201C";
+  font-size: 500%;
+  display: block;
+  position: absolute;
+  top: -9px;
+  left: -5px;
+}
+
+cite {
+  font-size: 90%;
+  margin-top: 25px;
+  display: block;
+}
+
+cite img {
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/*-----------------------------------------*/
+/*SECTION PLANS*/
+/*-----------------------------------------*/
+
+.section-plans {
+  background-color: #f4f4f4;
+}
+
+.plan-box {
+  background-color: #fff;
+  border-radius: 5px;
+  width: 90%;
+  margin-left: 5%; /*pt a centra textul din interiorul div-ului plan-box setam marginea 5% adica jumate din restul ramas 10% (90 la 100)*/
+  -webkit-box-shadow: 0 2px 2px #efefef;
+  box-shadow: 0 2px 2px #efefef; /*prima valoare pt axa X iar a doua pt Y. A treia valoare este estomparea iar a 4 culaorea*/
+}
+
+.plan-box div {
+  padding: 10px;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.plan-box ul li {
+  list-style-type: none;
+  padding: 5px 0;
+}
+
+.plan-price {
+  color: #e67e22;
+  font-size: 300%;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+.plan-price-meal {
+  font-size: 80%;
+}
+
+.plan-price span {
+  font-size: 30%;
+  font-weight: 300;
+}
+
+.plan-box div:first-child {
+  background-color: #fcfcfc;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.plan-box div:last-child {
+  text-align: center;
+  border: 0;
+}
+
+/*-----------------------------------------*/
+/*SECTION CONTACT*/
+/*-----------------------------------------*/
+
+.contact-form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%; /*deoarece dorim sa fie pe toata coloana*/
+  padding: 7px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 100px;
+}
+
+input[type="checkbox"] {
+  margin: 10px 5px 10px 0;
+}
+
+:focus {
+  outline: none; /*pentru a scapa de focus cand dam click pe un element*/
+}
+
+/*-----------------------------------------*/
+/*FOOTER*/
+/*-----------------------------------------*/
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px;
+  font-size: 80%;
+}
+
+.footer-nav {
+  float: left;
+  list-style: none;
+}
+
+.social-icons {
+  list-style: none;
+  float: right;
+}
+
+.footer-nav li,
+.social-icons li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-icons li:last-child {
+  margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-icons li a:link,
+.social-icons li a:visited {
+  color: #888;
+  border: 0;
+}
+
+.social-icons li a:link,
+.social-icons li a:visited {
+  font-size: 160%;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+  color: #edecec;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.social-icons #facebook:hover {
+  color: #3b5998;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.social-icons #twitter:hover {
+  color: #55acee;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.social-icons #google:hover {
+  color: #dd4b39;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.social-icons #instagram:hover {
+  color: #4c68d7;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+footer p {
+  color: #888;
+  text-align: center;
+  margin-top: 30px;
+}
